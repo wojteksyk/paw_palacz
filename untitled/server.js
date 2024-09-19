@@ -1,7 +1,10 @@
 const { createServer } = require('node:http');
 const hostname = '127.0.0.1';
+var url = require("url");
 const port = 3000;
-const fs = require('fs');
+const fs = require("fs");
+const adr = "http://127.0.0.1:3000/get_params"
+const q = url.parse(adr,true);
 const server = createServer((req, res) => {
     const url = req.url;
     if(url==="/"){
@@ -34,6 +37,18 @@ const server = createServer((req, res) => {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'text/plain');
         res.end('dokument HTML pobrany z pliku');
+    }
+    else  if(url==="/get_params"){
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'text/plain');
+       res.write(q.host+"    ");
+        res.write(q.pathname+"       ");
+        res.end(q.method);
+
+
+
+
+
     }
 
 });

@@ -1,10 +1,12 @@
-const { createServer } = require('node:http');
+const http = require('http');
+const fs = require('fs');
+const url = require('url');
+const path = require('path');
+const mime = require('mime-types'); // Nowy moduł do rozpoznawania typu MIME
+
 const hostname = '127.0.0.1';
-const url = require("url");
 const port = 3000;
-const fs = require("fs");
-const adr = "http://127.0.0.1:3000/get_params"
-const q = url.parse(adr,true);
+
 const server = createServer((req, res) => {
     const url = req.url;
     if (url === "/home") {
@@ -24,22 +26,24 @@ const server = createServer((req, res) => {
         });
 
 
-    } else if (url === "/html-json") {
+    } else if (parsedUrl.pathname === "/html-json") {
+
         res.statusCode = 200;
-        res.setHeader('Content-Type', 'text/plain');
-        res.end('dokument HTML generowany wewnątrz kodu Node.js');
-    } else if (url === "/html") {
+        res.setHeader('Content-Type', 'text/html');
+        res.end(`
+            <html>
+                <head><title>Generated HTML</title></head>
+                <body><h1>HTML wygenerowany w Node.js</h1></body>
+            </html>
+  `);
+    }
+
+    else if (url === "/html") {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'text/plain');
         res.end('dokument HTML pobrany z pliku');
     }
-    /*else  if(url==="/get_params"){
-        res.statusCode = 200;
-        res.setHeader('Content-Type', 'text/plain');
-       res.write(q.host+"    ");
-        res.write(q.pathname+"       ");
-        res.end(q.method);
-    }*/
+
 
     else if (req.method === 'GET' && url.startsWith('/get_params')){
         const url = require('url');
@@ -60,9 +64,6 @@ const server = createServer((req, res) => {
     res.end('Parametry wczytane');
 
 }
-
-
-
     else{
     const url = require("url");
         const file = "dupa.html";

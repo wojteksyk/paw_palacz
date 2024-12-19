@@ -1,0 +1,20 @@
+{
+  "name": "31.10(blog)",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": true,
+  "dependencies": {
+    "@prisma/client": "^6.1.0",
+    "body-parser": "^1.20.3",
+    "express": "^4.21.2",
+    "mysql2": "^3.11.5",
+    "prisma": "^6.1.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background: #f8f8f8;
+}
+
+header {
+    background: #6C80FF;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 1rem 2rem;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+}
+
+.form-row label {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.form-row input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-row input:focus {
+    outline: none;
+    border-color: #6C80FF;
+}
+
+.form-row button {
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background: #6C80FF;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+}
+
+.form-row button:hover {
+    background: #5a6ee8;
+}
+
+footer {
+    background: #6C80FF;
+    padding: 1rem 2rem;
+    text-align: center;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+}

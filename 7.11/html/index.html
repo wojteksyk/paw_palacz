@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dodaj Wpis</title>
+</head>
+<body>
+<header>
+    <h1>Dodaj nowy wpis</h1>
+</header>
+<main>
+    <form action="/add-wpis" method="POST">
+        <div>
+            <label for="tytul">Tytuł:</label>
+            <input type="text" id="tytul" name="tytul" required>
+        </div>
+        <div>
+            <label for="tresc">Treść:</label>
+            <textarea id="tresc" name="tresc" required></textarea>
+        </div>
+        <div>
+            <label for="kategoria">Wybierz kategorię:</label>
+            <select id="kategoria" name="kategoriaId" required>
+                <option value="1">Technologia</option>
+                <option value="2">Nauka</option>
+                <option value="3">Sztuka</option>
+            </select>
+        </div>
+        <div>
+            <button type="submit">Dodaj wpis</button>
+        </div>
+    </form>
+</main>
+<footer>
+    Copyright &copy; 2023 | Twoja firma
+</footer>
+</body>
+</html>
